@@ -15,7 +15,6 @@ public class App {
             System.out.println(mayorDeEdad || tieneCarnet);
             System.out.println(!mayorDeEdad);
         
-        Scanner sc = new Scanner(System.in);
 
         //Datos de usuario
 
@@ -38,11 +37,7 @@ public class App {
         double area = base * altura;
         System.out.println("La base calculada es: " + area); 
 
-        */
-
         
-    
-        Scanner sc = new Scanner(System.in);
 
         //Area de un ciruclo
 
@@ -108,6 +103,107 @@ public class App {
             System.out.println("    Cagaste mano :(");
         }
 
+        //Operador ternario
+
+        String mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
+        System.out.println(mensaje);
+
+        //Switch
+
+        System.out.print("Ingrese un dia: ");
+        int dia = sc.nextInt();
+
+        switch (dia) {
+            case 1:
+                System.out.println("Lunes");
+                break;
+            case 2:
+                System.out.println("Martes");
+                break;
+            case 3:
+                System.out.println("Miercoles");
+                break;
+            case 4:
+                System.out.println("Jueves");
+                break;
+            case 5:
+                System.out.println("Viernes");
+                break;
+            case 6:
+                System.out.println("Sabado");
+                break;
+            case 7:
+                System.out.println("Domingo");
+                break;
+            default:
+                System.out.println("No valido");
+                break;
+        }
+
+        
+
+        System.out.print("Numero 1: ");
+        double numeroUno = sc.nextDouble();
+
+        System.out.print("\nIngrese un numero para realizar una de las siguientes opreaciones: \n 1: Suma\n 2: Resta\n 3: Multiplicación\n 4: División\n\n  :");
+        int ope = sc.nextInt();
+
+        System.out.print("\nNumero 2: ");
+        double numeroDos = sc.nextDouble();
+
+        double resultado;
+
+        switch (ope) {
+            case 1:
+                resultado = numeroUno + numeroDos;
+                System.out.println(resultado);
+                break;
+            case 2:
+                resultado = numeroUno - numeroDos;
+                System.out.println(resultado);
+                break;
+            case 3:
+                resultado = numeroUno * numeroDos;
+                System.out.println(resultado);
+                break;
+            case 4:
+                if (numeroDos == 0) {
+                    System.out.println("No se puede dividir entre cero");
+                }
+                else { 
+                    resultado = numeroUno / numeroDos;
+                    System.out.println(resultado);
+                }
+                break;
+            default:
+                System.out.println("Operación no valida");
+                break;
+
+        }
+
+        
+
+        //FOR
+
+        for (int i = 0; i <=15; i++) {
+            if (i % 2 == 0) {
+                System.out.println("Iteración "+ i);
+            }
+        }
+
+        */
+
+        // Tabla de multiplicar
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("¿De qué número quieres la tabla?  ");
+        int numero = sc.nextInt();
+
+        System.out.println("Tabla del " + numero + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(numero + " x " + i + " = " + (numero * i));
+        }
         sc.close();
 
     }
