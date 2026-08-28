@@ -191,19 +191,105 @@ public class App {
             }
         }
 
-        */
-
         // Tabla de multiplicar
         
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("¿De qué número quieres la tabla?  ");
-        int numero = sc.nextInt();
+        int edad = -1;
 
-        System.out.println("Tabla del " + numero + ":");
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(numero + " x " + i + " = " + (numero * i));
+        while (edad < 0 || edad > 120) {
+            System.out.print("Ingrese su edad ( 0 - 120 ): ");
+            edad = sc.nextInt();
+            if (edad < 0 || edad > 120) {
+                System.out.println("Edad invalida, intente de nuevo.");
+            }
         }
+        System.out.println("Edad registrada: " + edad);
+
+        // While es un ciclo condicionado a el inicio, mientras que el do while es condicionado al final
+
+        Scanner sc = new Scanner(System.in);
+
+        int opcion;
+        do {
+            System.out.println("\n\n\n===MENÚ===");
+            System.out.println("1. Saludar");
+            System.out.println("2. Despedirse");
+            System.out.println("3. Fracasar");
+            System.out.println("0. Salir");
+            System.out.print("Opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+            case 1:
+                System.out.println("\n\n\nHola putos");
+                break;
+            case 2:
+                System.out.println("\n\n\nChao putos");
+                break;
+            case 3:
+                System.out.println("\n\n\nEres el desperdicio de masa mas grande en el espacio entero");
+                break;
+            default:
+                System.out.println("\n\n\nAprenda a seguir instrucciones");
+                break;
+            } 
+        
+        } while (opcion != 0);
+
+        System.out.println("\n\n\nPrograma finisheado.");
+
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) break;
+            System.out.println(i);
+        }
+
+        System.out.println("\n\n\n");
+
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 == 0) continue;
+            System.out.println(i);
+        }
+
+        Scanner sc = new Scanner(System.in);
+
+        int[] notas = new int [5];
+
+        notas [0] = 85;
+        notas [1] = 90;
+        notas [2] = 78;
+        notas [3] = 92;
+        notas [4] = 88;
+
+        for (int i = 0; i < notas.length; i++) {
+            System.out.println("Nota " + (i + 1) + ": " + notas[i]);   
+        }
+
+        for (int nota : notas) {
+            System.out.println(nota);
+        }
+
+        */
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("¿Cuántos estudiantes hay? ");
+        int n = sc.nextInt();
+
+        double[] notas = new double[n];
+        double suma = 0;
+
+        for (int i = 0;i < n; i++) {
+            System.out.print("Nota del estudiante " + (i + 1) + ": ");
+            notas[i] = sc.nextDouble();
+            suma += notas[i];
+        }
+
+        double promedio = suma / n;
+        System.out.println("Promedio de grupo: " + promedio);
+        
         sc.close();
 
     }
